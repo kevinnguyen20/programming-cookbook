@@ -4,13 +4,15 @@
 
 Source: https://linuxconfig.org/how-to-setup-and-use-ftp-server-in-ubuntu-linux
 
-### vsftp installation
+### How to setup and use FTP Server in Ubuntu Linux
+
+#### vsftp installation
 
 ```
 sudo apt install vsftpd
 ```
 
-### Configure vsftpd server
+#### Configure vsftpd server
 
 It’s always best practice to keep a backup copy of the original config file, just in case something goes wrong later. Let’s rename the default config file:
 
@@ -55,4 +57,14 @@ With the configuration file saved and the firewall rules updated, restart vsftpd
 
 ```
 sudo systemctl restart vsftpd
+```
+
+#### Connect to FTP server via command line
+
+```
+sudo apt install ftp
+```
+
+```
+ftp 127.0.0.1
 ```

@@ -59,6 +59,19 @@ With the configuration file saved and the firewall rules updated, restart vsftpd
 sudo systemctl restart vsftpd
 ```
 
+#### Create an FTP user
+
+```
+sudo useradd -m ftpuser
+sudo passwd ftpuser
+```
+
+In order to verify that everything’s working properly, you should store at least one file in ftpuser’s home directory. This file should be visible when we login to FTP in the next steps.
+
+```
+sudo bash -c "echo FTP TESTING > /home/ftpuser/FTP-TEST"
+```
+
 #### Connect to FTP server via command line
 
 ```
@@ -68,3 +81,38 @@ sudo apt install ftp
 ```
 ftp 127.0.0.1
 ```
+
+As you can see in the screenshot above, we were able to login to the FTP server by specifying the username and password that we configured earlier. Next, let’s try issuing an ls command, which should list the test file that we created in previous steps.
+
+```
+ftp> ls
+```
+
+#### Allow anonymous access in vsftpd
+
+So far, we’ve seen how to create new users that can access the FTP server. If you’d like others to be able to access your FTP server without giving a username and password, you can configure anonymous authentication. Follow the steps below to get it set up.
+
+```
+sudo nvim /etc/vsftpd.conf
+```
+
+Next, look for the anonymous_enable=NO line, and change the setting to YES.
+
+```
+anonymous_enable=YES
+```
+
+```
+sudo systemctl restart vsftpd
+```
+
+To test out anonymous login, issue the ftp 127.0.0.1 command, use anonymous as your username, and a blank password. You should receive a 230 Login successful message as shown in the screenshot below.
+
+#### Change default FTP port number
+
+By default, the FTP protocol listens on port 21 for user authentication and port 20 for data transfer. However, we can change this behavior by making a small edit to the /etc/vsftpd.conf file. At the bottom of the file, use the listen_port directive to specify a different port for vsftpd to use. For example, adding the following line will instruct vsftpd to listen on port 2121:
+
+```
+listen_port=2121
+```
+

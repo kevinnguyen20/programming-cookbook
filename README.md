@@ -1,5 +1,47 @@
 # Programming Cookbook
 
+## Fun
+
+### Steam Locomotive
+
+Source: https://www.linuxshelltips.com/sl-run-locomotive-train-in-terminal/
+
+```
+sudo apt install sl
+```
+
+Run the command to verify the installation. If installed and working correctly, you should see the train animation shown below.
+
+```
+sl
+```
+
+#### Basic Usage of SL (Steam Locomotive) in Linux
+
+If you call the command with a parameter `-a`, it will show the train animation, with people on the train shouting for help.
+
+```
+sl -a
+```
+
+Parameter `-l` shows a smaller train in the animation.
+
+```
+sl -l
+```
+
+Similarly, with '-F' parameter, the train will appear as if it is flying, instead of going in a straight line.
+
+```
+sl -F
+```
+
+There is another parameter '-e' which will allow the user to close the animation with a Ctrl + C signal when used.
+
+```
+sl -e
+```
+
 ## FTP
 
 Source: https://linuxconfig.org/how-to-setup-and-use-ftp-server-in-ubuntu-linux

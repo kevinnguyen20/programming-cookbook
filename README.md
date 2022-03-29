@@ -206,4 +206,4 @@ Link: https://github.com/kevinnguyen20/programming-cookbook/wiki/FTP
 
 ### What is robots.txt
 
-Source: https://developers.google.com/search/docs/advanced/robots/intro
+Link: https://github.com/kevinnguyen20/programming-cookbook/wiki/robots.txt

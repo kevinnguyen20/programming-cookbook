@@ -314,3 +314,8 @@ By default, the FTP protocol listens on port 21 for user authentication and port
 listen_port=2121
 ```
 
+## Search Engine
+
+### What is robots.txt
+
+Source: https://developers.google.com/search/docs/advanced/robots/intro

@@ -1,5 +1,5 @@
 # Programming Cookbook
 
-## Table of Contens
+## Table of Contents
 
 Wiki: https://github.com/kevinnguyen20/programming-cookbook/wiki
